@@ -1,0 +1,274 @@
+/* General Styling */
+body {
+    background-image: linear-gradient(to top, #f2d3d1, #ffffff);
+    color: rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.navbar {
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Sticks to the top on scroll */
+    top: 0;
+    z-index: 10;
+    animation: slideDown 1s ease-in-out; /* Navbar slide-down animation */
+}
+
+.navbar-brand img {
+    max-height: 60px;
+}
+
+/* Nav-Link Animation */
+.navbar-nav .nav-item .nav-link {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #63605f;
+    margin-right: 20px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-transform: capitalize;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #d1504a;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.navbar-nav .nav-item .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #d1504a;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item .nav-link:hover::after {
+    width: 100%;
+}
+.view-container {
+    text-align: center;
+    margin-top: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #d1504a;
+    margin-bottom: 30px;
+}
+
+/* Table Styling */
+.table {
+    margin: 0 auto; /* Center the table */
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.table th {
+    background-color: #d1504a;
+    color: white;
+    font-weight: bold;
+}
+
+.table td {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+}
+
+/* Buttons */
+
+.btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.btn-warning {
+    background-color: #ffcc00;
+    border: none;
+    color: #000;
+}
+
+.btn-danger {
+    background-color: #e60000;
+    border: none;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    margin-top: 20px;
+}
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Insert Form Styling */
+.insert-form {
+    padding: 20px;
+    background-color: #fef7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+    display: none;
+}
+
+
+
+.insert-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #d1504a;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #555;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Vertically center */
+}
+
+.modal-content {
+    margin: auto; /* Center the modal horizontally */
+    border-radius: 10px; /* Optional: Rounded corners for better look */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Animation to the Table */
+.table {
+    animation: fadeIn 1s ease-in-out;
+}
+/* Hover Effect for Buttons */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+/* Slide-In Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Animation to the Insert Form */
+.insert-form {
+    animation: slideIn 0.7s ease-in-out;
+}
+/* Highlight Table Row on Hover */
+.table tbody tr:hover {
+    background-color: #fce4ec; /* Light pink */
+    transition: background-color 0.3s ease;
+}
+/* Slide-In Animation for Title */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply Animation to the Title */
+.view-title {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .table {
+        width: 100%;
+    }
+}

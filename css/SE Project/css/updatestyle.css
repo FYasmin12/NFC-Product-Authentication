@@ -1,0 +1,141 @@
+/* General Styling */
+body {
+    background-image: linear-gradient(to top, #f2d3d1, #ffffff);
+    color: rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.nav-link {
+    font-size: 1rem;
+    color: #ed766e; /* Light red color */
+    font-weight:bold;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link:hover {
+    color: #d1504a; /* Darker red color */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active Link Style */
+.nav-link.active {
+    color: #d1504a; /* Highlight active link */
+    border-bottom: 2px solid #d1504a; /* Underline for active link */
+}
+
+/* Hover Animation - Underline */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #d1504a; /* Underline color */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+.update-container {
+    text-align: center;
+    margin-top: 40px;
+    max-width: 800px; /* Adjust width */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px; /* Add padding */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #ffffff; /* Background color for the form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px; /* Add margin to separate from footer */
+}
+
+.update-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #d1504a;
+    margin-bottom: 30px;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.update-form {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Form Labels */
+.update-form .form-group label {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Form Fields */
+.update-form .form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Update Button */
+.update-form .btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.update-form .btn-success:hover {
+    background-color: #218838;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .update-container {
+        padding: 10px;
+    }
+}

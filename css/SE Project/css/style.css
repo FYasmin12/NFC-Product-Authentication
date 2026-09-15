@@ -1,0 +1,349 @@
+body {
+    background-image: linear-gradient(to top, #f2d3d1, #ffffff);
+    color: rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* General Nav-Link Styles */
+.nav-link {
+    font-size: 1rem;
+    color: #ed766e; /* Light red color */
+    font-weight:bold;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link:hover {
+    color: #d1504a; /* Darker red color */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active Link Style */
+.nav-link.active {
+    color: #d1504a; /* Highlight active link */
+    border-bottom: 2px solid #d1504a; /* Underline for active link */
+}
+
+/* Hover Animation - Underline */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #d1504a; /* Underline color */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+/* Authentication Container */
+.auth-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.auth-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+
+
+.auth-card {
+    max-width: 350px;
+    margin: 20px auto;
+}
+
+.input-group input {
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid #d1504a;
+    padding: 10px;
+    animation: fadeIn 2s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.input-group input:focus {
+    border-color: #eca39e;
+    outline: none;
+}
+
+
+
+/* Input Box Styling */
+.input-box {
+    display: inline-block;
+    margin: 10px;
+    width: 60px;
+    height: 50px;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: #333;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.input-box:focus {
+    outline: 2px solid #f2d3d1;
+}
+
+/* Button Styling */
+/* Verify Button */
+.btn-verify,
+.btn-reset {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-verify:hover,
+.btn-reset:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    animation: pulse 0.5s ease-in-out;
+}
+
+.btn-verify {
+    background-color: #d1504a; /* Bright green */
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-verify:hover {
+    background-color:#f03a2d; /* Slightly darker green */
+}
+
+/* Reset Button */
+.btn-reset {
+    background-color: #808080; /* Gray */
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reset:hover {
+    background-color: #666666; /* Darker gray */
+}
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+
+/* QR Option Styling */
+.qr-option {
+    margin-top: 20px;
+    color: #786d6d;
+}
+.qr-option a {
+    animation: fadeIn 2.5s ease-in-out;
+    color: #d1504a;
+    text-decoration: none;
+    
+}
+
+.qr-option a:hover {
+    text-decoration: underline;
+    color: #ec1d12;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 5px;
+}
+
+.container h1 {
+    color: #ffffff;
+}
+
+.section {
+    background-color: #ffffff;
+    padding: 50px 30px;
+    border: 1.5px solid #786f6f;
+    border-radius: 0.25em;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25);
+}
+/* Scanner Container Styles */
+
+
+
+#my-qr-reader {
+    padding: 20px !important;
+    border: 1.5px solid #121010 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+/* Scanning Line Animation */
+.scanner-line {
+    width: 90%;
+    height: 2px;
+    background-color: #d1504a;
+    position: absolute;
+    top: 0;
+    animation: scanLine 2s linear infinite;
+}
+#my-qr-reader img[alt="Info icon"] {
+    display: none;
+}
+
+#my-qr-reader img[alt="Camera based scan"] {
+    width: 100px !important;
+    height: 100px !important;
+}
+
+button {
+    padding: 10px 20px;
+    border: 1px solid #b2b2b2;
+    outline: none;
+    border-radius: 0.25em;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: #008000ad;
+    transition: 0.3s background-color;
+}
+
+button:hover {
+    background-color: #008000;
+}
+
+#html5-qrcode-anchor-scan-type-change {
+    text-decoration: none !important;
+    color: #1d9bf0;
+}
+
+video {
+    width: 100% !important;
+    border: 1px solid #b2b2b2 !important;
+    border-radius: 0.25em;
+}
+#my-qr-reader {
+    width: 300px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+#scanner-interface {
+    text-align: center;
+}
+
+#scan-result {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Footer Styling */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+ /* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button hover pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@media (max-width: 991px) {
+    /* Center the logo */
+    .navbar-brand {
+      text-align: center;
+      margin-left: 110px;
+      margin-right: auto;
+    }
+    /* Responsive Nav-Link Spacing */
+    .nav-link {
+        margin-right: 10px;
+        font-size: 0.9rem; /* Slightly smaller text on smaller screens */
+    }
+   
+}
+
+
