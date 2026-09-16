@@ -9,10 +9,10 @@ if (!isset($_SESSION["admin_logged_in"]) || $_SESSION["admin_logged_in"] !== tru
 
 // Database Connection
 
-$servername = "sql212.infinityfree.com"; // MySQL Hostname
-$username   = "if0_42930535";           // MySQL Username
-$password   = "Fahmida2002";   // Account Password
-$dbname     = "if0_42930535_nfc";       // Database Name
+$servername = "sql208.infinityfree.com"; // MySQL Hostname
+$username   = "if0_42930832";           // MySQL Username
+$password   = "Fahmida2004";   // Account Password
+$dbname     = "if0_42930832_nfc";       // Database Name
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
