@@ -8,15 +8,14 @@ if (!isset($_SESSION["admin_logged_in"]) || $_SESSION["admin_logged_in"] !== tru
 }
 
 // Database Connection
-$host = "localhost";
-$user = "root";
-$password = "";
-$dbname = "nfc";
 
-// Create Connection
-$conn = new mysqli($host, $user, $password, $dbname);
+$servername = "sql212.infinityfree.com"; // MySQL Hostname
+$username   = "if0_42930535";           // MySQL Username
+$password   = "Fahmida2002";   // Account Password
+$dbname     = "if0_42930535_nfc";       // Database Name
 
-// Check Connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
